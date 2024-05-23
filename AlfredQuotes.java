@@ -1,4 +1,6 @@
 import java.util.Date;
+import java.util.Calendar;
+
 public class AlfredQuotes {
     
     public String basicGreeting() {
@@ -11,8 +13,24 @@ public class AlfredQuotes {
         return String.format("Hello, %s, it is nice to see you!", name);
     }
 
-    public String guestGreeting(String name, String dayPeriod) {
-        return String.format("Good %s, %s. It is lovely to see you", dayPeriod, name);
+    // public String guestGreeting(String name, String dayPeriod) {
+    //     return String.format("Good %s, %s. It is lovely to see you", dayPeriod, name);
+    // }
+
+    public String guestGreeting(){
+        Calendar cal = Calendar.getInstance();
+        int hour = cal.get(Calendar.HOUR_OF_DAY);
+        String dayPeriod;
+
+        if (hour < 12) {
+            dayPeriod = "morning";
+        } else if (hour > 18) {
+            dayPeriod = "afternoon";
+        } else {
+            dayPeriod = "evening";
+        }
+        
+        return String.format("Good %s, it is lovely to see yoU!", dayPeriod);
     }
     
     public String dateAnnouncement() {

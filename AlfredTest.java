@@ -11,8 +11,7 @@ public class AlfredTest {
         // Make some test greetings, providing any necessary data
         String testGreeting = alfredBot.basicGreeting();
         String testGuestGreeting = alfredBot.guestGreeting("Beth Kane");
-        String testGreetWithPeriod = alfredBot.guestGreeting("Austin", "Evening");
-        String testGreetWithPeriodDif = alfredBot.guestGreeting("William", "Morning");
+        String testGreetWithPeriod = alfredBot.guestGreeting();
         String testDateAnnouncement = alfredBot.dateAnnouncement();
 
         String alexisTest = alfredBot.respondBeforeAlexis(
@@ -32,6 +31,5 @@ public class AlfredTest {
         System.out.println(alfredTest);
         System.out.println(notRelevantTest);
         System.out.println(testGreetWithPeriod);
-        System.out.println(testGreetWithPeriodDif);
     }
 }
